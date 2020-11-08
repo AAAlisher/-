@@ -1,0 +1,12 @@
+@startuml
+skinparam class {
+	BackgroundColor White
+	ArrowColor Black
+	BorderColor Black
+}
+class "Хозяин комнаты" as P {
+ Средства для уборки
+Убрать комнату (Физическая активность, До конца рабочего дня) -> Чистая комната
+}
+hide circle
+@enduml
