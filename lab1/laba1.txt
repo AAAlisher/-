@@ -10,11 +10,11 @@ skinparam usecase {
 	BorderColor Black
 }
 left to right direction
-actor P0 as "person?"
-actor M0 as "module?"
-actor P as "?"
-actor M as "?"
-usecase A as "activity?"
+actor P0 as "Проживающий"
+actor M0 as "Чистящие средства"
+actor P as "Хозяин комнаты"
+actor M as "Средства для уборки"
+usecase A as "Уборка комнаты"
 P -- (A)
 (A) -- M
 P0 <|-- P
