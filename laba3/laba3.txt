@@ -1,1 +1,20 @@
-laba3
+@startuml
+actor "Официант" as p
+database "Данные о весах" as q
+participant "Инструкция по приготовлению" as m
+participant "Весы" as d
+actor "Руководитель" as cd
+database "БД приготовленных чашек чая" as t
+p -> q : Граммовка чая
+q -> p 
+p -> m : Наполнение чайного заварника
+m -> p
+p -> d : Кипячение
+d -> cd
+activate cd
+cd -> m : Повторная Граммовка чая
+m -> cd
+cd -> p : Отправка на повторное заваривание (при необходимости)
+cd -> t : Наполнение чайного заварника
+deactivate cd
+@enduml
