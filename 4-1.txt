@@ -1,0 +1,34 @@
+@startuml
+left to right direction
+
+actor "Клиент"
+actor "Мастер"
+actor "CRM"
+
+usecase case1 as "Просмотр услуг"
+
+usecase case2 as "Передача требований к заказу"
+
+usecase case3 as "Совершение заявки"
+
+usecase case4 as "Работа с заказами"
+
+usecase case5 as "Выполнение"
+
+usecase case6 as "Принятие заявок в работу"
+
+usecase case7 as "Обсуждение вариантов ремонта"
+
+usecase case8 as "Предоставление средств для работы с клиентами"
+
+Клиент —> case3
+case3 ..> case2
+case3 ..> case1
+
+Мастер —> case4
+case4 ..> case5
+case4 ..> case6
+case4 ..> case7
+
+CRM —> case8
+@enduml
