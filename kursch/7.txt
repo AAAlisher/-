@@ -1,0 +1,25 @@
+@startuml
+skinparam component {
+BackgroundColor White
+ArrowColor Black
+BorderColor Black
+}
+
+skinparam interface {
+BackgroundColor White
+ArrowColor Black
+BorderColor Black
+}
+component [БД] as DB
+component [ПК] as DA
+component [Сайт автомастерской] as Server
+
+() "LAN" as L
+() "LAN" as L2
+
+
+DA - L2
+L2 - Server
+Server - L
+L - DB
+@enduml
