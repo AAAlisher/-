@@ -1,0 +1,34 @@
+@startuml
+actor Клиент
+actor Мастер
+entity Сайт
+entity CRM
+
+Клиент -> Сайт : Просматривает список \nпредлагаемых услуг ремонта
+activate Клиент
+activate Сайт
+Клиент <- Сайт : Выбирает услугу из списка
+deactivate Клиент
+deactivate Сайт
+
+Сайт -> CRM : Передает информацию \n о совершении заказа
+activate Сайт
+activate CRM
+Сайт <- CRM : Заказ принят в работу
+deactivate Сайт
+deactivate CRM
+
+Мастер -> CRM : Просматривает заявки 
+activate CRM
+activate Мастер
+Мастер <- CRM : Заявка на экране
+deactivate CRM
+deactivate Мастер
+
+Мастер -> Клиент : Принимает заявку и предлагает варинаты ремонта
+activate Мастер
+activate Клиент
+Мастер <- Клиент : Выбраны варианты ремонта, \n услуги согласованы
+deactivate Мастер
+deactivate Клиент
+@enduml
